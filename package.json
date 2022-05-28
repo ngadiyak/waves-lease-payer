@@ -1,0 +1,20 @@
+{
+  "name": "waves-lease-payer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@waves/waves-transactions": "^4.2.5-beta.3",
+    "node-schedule": "^2.1.0",
+    "node-telegram-bot-api": "^0.57.0",
+    "npm": "^8.11.0",
+    "unirest": "^0.6.0",
+    "waves-transactions": "^3.0.13"
+  }
+}
