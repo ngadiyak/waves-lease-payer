@@ -21,7 +21,8 @@ const mkInvoke = (balance) => {
 
 const main = async () => {
     schedule.scheduleJob('0 0 * * *', async () => {
-        const balance = JSON.parse(await getBalance(miner));
+        const r = await getBalance(miner);
+        const balance = JSON.parse(r.body);
 
         if (balance.regular > invokeFee) {
             const tx = mkInvoke(balance);
@@ -32,5 +33,7 @@ const main = async () => {
         }
     });
 }
+
+console.log(seed);
 
 main();
