@@ -20,7 +20,7 @@ const mkInvoke = (balance) => {
 };
 
 const main = async () => {
-    schedule.scheduleJob('0 0 * * *', async () => {
+    schedule.scheduleJob('0 /8 * * *', async () => {
         const r = await getBalance(miner);
         const balance = JSON.parse(r.body);
 
@@ -29,7 +29,7 @@ const main = async () => {
             const r = await broadcast(tx);
             console.log(`Broadcast invoke tx: ${tx.id} | code ${r.code}`);
         } else {
-            console.log(`Not enough balance: ${balance}`);
+            console.log(`Not enough balance: ${JSON.stringify(balance)}`);
         }
     });
 }
