@@ -20,7 +20,7 @@ const mkInvoke = (balance) => {
 };
 
 const main = async () => {
-    schedule.scheduleJob("0 \8 * * *", async () => {
+    schedule.scheduleJob("0 */8 * * *", async () => {
         const r = await getBalance(miner);
         const balance = JSON.parse(r.body);
 
